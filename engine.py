@@ -11,7 +11,7 @@ class SentinelBusiness():
         return self.revenue - self.costs
      
     def calculte_margin(self): # margin = (revenue - costs / revenue) x 100
-        if self.revenue < 0 or == 0:
+        if self.revenue < 0 :
             return 0
         return (self.calculate_profit() - self.revenue) * 100
    

@@ -7,12 +7,9 @@ class GUIMenu():
             self.bt= bt
             self.opt = opt
             self.select = select
-            self.otp = otp
-            
-            opt =  {1 : "Marketing" , 2 : "Servers ", 3 : "Salaries"  }
+            self.opt =  {1 : "Marketing" , 2 : "Servers ", 3 : "Salaries"  }
                 
-    def questions2(self,total): # menu with questions
-        self.total = total
+    def questions2(self): # menu with questions
         print("***************")
         print("****Welcome****")
         print("***************\n")
@@ -23,7 +20,7 @@ class GUIMenu():
         self.opt2 = float(input("*Which is the cost for maintain the platform online* : "))
         self.opt3 = float(input("*How much money you have invested on for attract new clients this month?* : "))
         total = self.opt1 + self.opt2 + self.opt3 
-        while questions3 is True:
+        while self.questions3 is True:
             self.bt = input("Okay, you have another categor for add something? ")
             self.bt = self.bt.lower()  
                 
@@ -32,13 +29,14 @@ class GUIMenu():
                     total_value= float(input(f"Okay, What is the total value for [{new_opt}] "))
                     # save in te diccionary and plus all
                     self.opt[new_opt] = total_value
+                    total += total_value
                     print(f"\nUpdated options: {self.opt}")
                     print(f"Current total {total}")
             else:
                     # if the user says no or anything else close the iteration
-                print("Closing expense,  final total {total}  ")
+                print(f"Closing expense,  final total {total}  ")
                 self.questions3 = False
-
+        return total
 
             
                 
