@@ -18,8 +18,26 @@ Built with a focus on **Object-Oriented Programming (OOP)** and clean code princ
 * **Future-Ready:** Designed to integrate with payment APIs (Stripe, PayPal) in future versions.
 
 ---
-### 👨‍💻 About the Author
-**[Tu Nombre]** *Software Engineering Student @ Universidad de La Salle* *Focused on Software Architecture & High-Impact Business Solutions.*
+###  About the Author
+**Gabriel Blanco** *Software Engineering Student @ Universidad de La Salle* *Focused on Software Architecture & High-Impact Business Solutions.*
 
+##  Project Roadmap & Checklist
+
+Status: **Phase 1 (Foundations)** 
+
+###  Completed
+- [x] **Initial Setup:** Repository initialized and linked with GitHub.
+- [x] **Documentation:** Professional README with business vision.
+- [x] **Core Engine:** First stable version of the financial health logic.
+- [x] **Public Pitch:** Launch video explaining the project's purpose and execution.
+
+###  In Progress (Phase 2)
+- [ ] **OOP Refactoring:** Transition from functional logic to a fully modular Class-based architecture.
+- [ ] **Visual Identity:** Adding professional badges and project banners to the documentation.
+
+###  Future Updates (Phase 3 & 4)
+- [ ] **Data Visualization:** Integration of `Matplotlib` or `Seaborn` for visual financial reports.
+- [ ] **External Input:** Support for CSV and Excel files to process real business data.
+- [ ] **Cloud Deployment:** Transitioning from a local script to a basic cloud-based microservice.
 ---
 *This is an open-source project part of my professional development portfolio.*
