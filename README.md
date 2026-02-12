@@ -37,7 +37,7 @@ Status: **Phase 1 (Foundations)**
 - **Video** : https://youtu.be/_TezK-Gppv4
 
 ###  In Progress (Phase 2)
-![Coverage](https://img.shields.io/badge/coverage-10%25-orange?style=for-the-badge)
+![Coverage](https://img.shields.io/badge/coverage-19%25-orange?style=for-the-badge)
 
 - [ ] **OOP Refactoring:** Transition from functional logic to a fully modular Class-based architecture.
 - [ ] **Visual Identity:** Adding professional badges and project banners to the documentation.
