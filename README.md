@@ -27,7 +27,7 @@ Status: **Phase 1 (Foundations)**
 
 ###  Completed
 ![Build Status](https://img.shields.io/badge/build-passing-brightgreen?style=for-the-badge)
-![Coverage](https://img.shields.io/badge/coverage-95%25-orange?style=for-the-badge)
+![Coverage](https://img.shields.io/badge/coverage-100%25-orange?style=for-the-badge)
 ![Python](https://img.shields.io/badge/Python-3.10+-blue?style=for-the-badge&logo=python)
 
 - [x] **Initial Setup:** Repository initialized and linked with GitHub.
