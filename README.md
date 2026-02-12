@@ -26,6 +26,9 @@ Built with a focus on **Object-Oriented Programming (OOP)** and clean code princ
 Status: **Phase 1 (Foundations)** 
 
 ###  Completed
+**https://img.shields.io/badge/build-passing-brightgreen?style=for-the-badge**
+
+**https://img.shields.io/badge/coverage-95%25-orange**
 - [x] **Initial Setup:** Repository initialized and linked with GitHub.
 - [x] **Documentation:** Professional README with business vision.
 - [x] **Core Engine:** First stable version of the financial health logic.
