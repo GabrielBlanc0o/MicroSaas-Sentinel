@@ -18,8 +18,8 @@ Built with a focus on **Object-Oriented Programming (OOP)** and clean code princ
 * **Future-Ready:** Designed to integrate with payment APIs (Stripe, PayPal) in future versions.
 
 ---
-###  About the Author
-**Gabriel Blanco** *Software Engineering Student @ Universidad de La Salle* *Focused on Software Architecture & High-Impact Business Solutions.*
+### 👨‍💻 About the Author
+**[Tu Nombre]** *Software Engineering Student @ Universidad de La Salle* *Focused on Software Architecture & High-Impact Business Solutions.*
 
 ##  Project Roadmap & Checklist
 
@@ -41,3 +41,5 @@ Status: **Phase 1 (Foundations)**
 - [ ] **Cloud Deployment:** Transitioning from a local script to a basic cloud-based microservice.
 ---
 *This is an open-source project part of my professional development portfolio.*
+
+Bogota, Colombia.
