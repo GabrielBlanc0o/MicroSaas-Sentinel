@@ -1,4 +1,5 @@
 #  MicroSaaS-Sentinel (V1.0)
+![Python](https://img.shields.io/badge/Python-3.10+-blue?style=for-the-badge&logo=python)
 
 **MicroSaaS-Sentinel** is a specialized financial monitoring engine designed for small businesses and micro-SaaS models. This project bridges the gap between raw data and strategic decision-making.
 
@@ -28,7 +29,6 @@ Status: **Phase 1 (Foundations)**
 ###  Completed
 ![Build Status](https://img.shields.io/badge/build-passing-brightgreen?style=for-the-badge)
 ![Coverage](https://img.shields.io/badge/coverage-100%25-orange?style=for-the-badge)
-![Python](https://img.shields.io/badge/Python-3.10+-blue?style=for-the-badge&logo=python)
 
 - [x] **Initial Setup:** Repository initialized and linked with GitHub.
 - [x] **Documentation:** Professional README with business vision.
@@ -37,6 +37,8 @@ Status: **Phase 1 (Foundations)**
 - **Video** : https://youtu.be/_TezK-Gppv4
 
 ###  In Progress (Phase 2)
+![Coverage](https://img.shields.io/badge/coverage-10%25-orange?style=for-the-badge)
+
 - [ ] **OOP Refactoring:** Transition from functional logic to a fully modular Class-based architecture.
 - [ ] **Visual Identity:** Adding professional badges and project banners to the documentation.
 
