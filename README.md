@@ -30,6 +30,7 @@ Status: **Phase 1 (Foundations)**
 - [x] **Documentation:** Professional README with business vision.
 - [x] **Core Engine:** First stable version of the financial health logic.
 - [x] **Public Pitch:** Launch video explaining the project's purpose and execution.
+- **Video** : https://youtu.be/_TezK-Gppv4
 
 ###  In Progress (Phase 2)
 - [ ] **OOP Refactoring:** Transition from functional logic to a fully modular Class-based architecture.
