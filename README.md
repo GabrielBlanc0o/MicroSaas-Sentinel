@@ -19,7 +19,9 @@ Built with a focus on **Object-Oriented Programming (OOP)** and clean code princ
 
 ---
 ### 👨‍💻 About the Author
-**[Tu Nombre]** *Software Engineering Student @ Universidad de La Salle* *Focused on Software Architecture & High-Impact Business Solutions.*
+**Gabriel Blanco** *Software Engineering Student @ Universidad de La Salle* *Focused on Software Architecture & High-Impact Business Solutions.*
 
 ---
 *This is an open-source project part of my professional development portfolio.*
+
+Bogota, Colombia.
