@@ -8,10 +8,10 @@ class SentinelBusiness:
         return self.revenue - self.costs
 
     def calculate_margin(self):
-        # Validación para evitar división por cero
+        # validate division with 0
         if self.revenue <= 0:
             return 0
-        # Fórmula correcta: (Ganancia / Ingresos) * 100
+        # ecuation
         return (self.calculate_profit() / self.revenue) * 100
 
     def get_health_status(self):
