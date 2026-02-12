@@ -1,3 +1,8 @@
+'''
+
+LEGACY CODE
+
+Only a small presentation for the big one
 def calculate_business_health(revenue, costs):
     """
     Basic logic to determine if a business is healthy.
@@ -21,3 +26,5 @@ print(f"--- Sentinel Financial Report ---")
 print(f"Net Profit: ${report['profit']}")
 print(f"Profit Margin: {report['margin_percentage']}")
 print(f"Health Status: {'✅ Solid' if report['is_healthy'] else '⚠️ Warning'}")
+'''
+
