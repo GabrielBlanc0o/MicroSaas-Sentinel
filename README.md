@@ -26,9 +26,10 @@ Built with a focus on **Object-Oriented Programming (OOP)** and clean code princ
 Status: **Phase 1 (Foundations)** 
 
 ###  Completed
-**https://img.shields.io/badge/build-passing-brightgreen?style=for-the-badge**
+![Build Status](https://img.shields.io/badge/build-passing-brightgreen?style=for-the-badge)
+![Coverage](https://img.shields.io/badge/coverage-95%25-orange?style=for-the-badge)
+![Python](https://img.shields.io/badge/Python-3.10+-blue?style=for-the-badge&logo=python)
 
-**https://img.shields.io/badge/coverage-95%25-orange**
 - [x] **Initial Setup:** Repository initialized and linked with GitHub.
 - [x] **Documentation:** Professional README with business vision.
 - [x] **Core Engine:** First stable version of the financial health logic.
