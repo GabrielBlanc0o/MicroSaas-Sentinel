@@ -34,7 +34,7 @@ Status: **Phase 1 (Foundations)**
 - [x] **Documentation:** Professional README with business vision.
 - [x] **Core Engine:** First stable version of the financial health logic.
 - [x] **Public Pitch:** Launch video explaining the project's purpose and execution.
-- **Video** : https://youtu.be/_TezK-Gppv4
+
 
 ###  In Progress (Phase 2)
 ![Coverage](https://img.shields.io/badge/coverage-19%25-orange?style=for-the-badge)
