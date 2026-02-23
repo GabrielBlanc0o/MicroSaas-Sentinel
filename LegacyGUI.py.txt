@@ -1,6 +1,43 @@
-from engine import SentinelBusiness
+'''
+primer fase usando tkinter
+from engine import SentinelBusiness as eg
+
+from main import GUIMenu as gui
+
 import tkinter as tk
-from tkinter import filedialog, messagebox
+from tkinter import ttk
+
+class interfaz(tk.Frame):
+    """Docstring."""
+
+    def __init__(self, parent=None):
+        tk.Frame.__init__(self, parent)
+        self.parent = parent
+        self.init_ui()
+
+    def init_ui(self):
+        """Aqui colocariamos los widgets."""
+        self.parent.title("MicroSaas-Sentinel")
+        
+        titulo_principal = tk.Label(text="Business Health Status", font=("Helvetica", 20, "bold"), bg= "#1e1e2e",fg="#ffffff")
+        titulo_principal.pack(pady=40,  anchor="w",padx=150)
+        
+        self.barra_menu_literal = tk.Frame (self.parent,bg="#2b2b3b", width=300)
+        self.barra_menu_literal.pack(side="left", fill="y")
+        self.barra_menu_literal.pack_propagate(False)
+        
+        #texto_prueba = tk.Label(self.parent, text = "Hola")
+        #texto_prueba.pack()
+
+if __name__ == "__main__":
+    ROOT = tk.Tk()
+    ROOT.geometry("800x600")
+    ROOT.configure(bg="#1e1e2e")
+ '''
+from main import GUIMenu as gui
+ 
+import tkinter as tk
+from tkinter import ttk, messagebox
 
 class interfaz(tk.Frame):
     """Interfaz gráfica principal para MicroSaaS-Sentinel."""
@@ -19,134 +56,71 @@ class interfaz(tk.Frame):
     def init_ui(self):
         """UI mejorada con funcionalidad completa."""
         self.parent.title("MicroSaas-Sentinel")
-        self.parent.geometry("900x750")
-        self.parent.resizable(False, False)
+        self.parent.geometry("1000x1000")
         self.parent.configure(bg="#1e1e2e")
         
-        header_frame = tk.Frame(self.parent, bg="#1e1e2e")
-        header_frame.pack(fill="x", padx=20, pady=20)
-
+        # Header principal
         titulo_principal = tk.Label(
-            header_frame,
-            text="Business Health Status",
-            font=("Helvetica", 20, "bold"),
-            bg="#1e1e2e",
+            text="Business Health Status", 
+            font=("Helvetica", 20, "bold"), 
+            bg="#1e1e2e", 
             fg="#ffffff"
         )
-        titulo_principal.pack(side="left")
-
-        export_pdf_button = tk.Button(
-            header_frame,
-            text="Export PDF",
-            font=("Helvetica", 10, "bold"),
-            bg="#4a9eff",
-            fg="#ffffff",
-            relief="flat",
-            padx=12,
-            pady=6,
-            command=self.export_to_pdf
+        titulo_principal.pack(pady=20, anchor="w", padx=20)
+        
+        # Sidebar
+        self.barra_menu_literal = tk.Frame(
+            self.parent, 
+            bg="#2b2b3b", 
+            width=250
         )
-        export_pdf_button.pack(side="right")
-
-        content_container = tk.Frame(self.parent, bg="#1e1e2e")
-        content_container.pack(fill="both", expand=True, padx=20, pady=10)
-
-        canvas = tk.Canvas(
-            content_container,
-            bg="#1e1e2e",
-            highlightthickness=0
-        )
-        v_scrollbar = tk.Scrollbar(content_container, orient="vertical", command=canvas.yview)
-        canvas.configure(yscrollcommand=v_scrollbar.set)
-
-        v_scrollbar.pack(side="right", fill="y")
-        canvas.pack(side="left", fill="both", expand=True)
-
-        scrollable_frame = tk.Frame(canvas, bg="#1e1e2e")
-        scrollable_window_id = canvas.create_window((0, 0), window=scrollable_frame, anchor="nw")
-
-        def _on_frame_configure(event):
-            canvas.configure(scrollregion=canvas.bbox("all"))
-
-        def _on_canvas_configure(event):
-            canvas.itemconfig(scrollable_window_id, width=event.width)
-
-        scrollable_frame.bind("<Configure>", _on_frame_configure)
-        canvas.bind("<Configure>", _on_canvas_configure)
-
-        self.main_content = scrollable_frame
-
+        self.barra_menu_literal.pack(side="left", fill="y")
+        self.barra_menu_literal.pack_propagate(False)
+        
+        # Contenido principal
+        self.main_content = tk.Frame(self.parent, bg="#1e1e2e")
+        self.main_content.pack(side="left", fill="both", expand=True, padx=20, pady=10)
+        
+        # Crear elementos
+        self.create_sidebar_content()
         self.create_input_form()
         self.create_dashboard_cards()
         self.create_expense_breakdown()
 
-    def export_to_pdf(self):
-        if not self.business_data:
-            messagebox.showerror("Error", "Please calculate business health before exporting.")
-            return
-
-        try:
-            from reportlab.lib.pagesizes import letter
-            from reportlab.pdfgen import canvas
-        except Exception:
-            messagebox.showerror(
-                "Missing dependency",
-                "PDF export requires 'reportlab'. Install it with: pip install reportlab"
-            )
-            return
-
-        default_name = (self.business_data.name or "business").strip().replace(" ", "_")
-        file_path = filedialog.asksaveasfilename(
-            defaultextension=".pdf",
-            filetypes=[("PDF files", "*.pdf")],
-            initialfile=f"{default_name}_report.pdf",
-            title="Save PDF report"
+    def create_sidebar_content(self):
+        """Create sidebar navigation content."""
+        sidebar_title = tk.Label(
+            self.barra_menu_literal,
+            text="Navigation",
+            font=("Helvetica", 14, "bold"),
+            bg="#2b2b3b",
+            fg="#ffffff"
         )
-        if not file_path:
-            return
-
-        c = canvas.Canvas(file_path, pagesize=letter)
-        width, height = letter
-        y = height - 60
-
-        c.setFont("Helvetica-Bold", 16)
-        c.drawString(50, y, "MicroSaaS-Sentinel Report")
-        y -= 30
-
-        c.setFont("Helvetica", 11)
-        c.drawString(50, y, f"Business: {self.business_data.name}")
-        y -= 18
-        c.drawString(50, y, f"Monthly revenue: ${self.business_data.revenue:,.2f}")
-        y -= 18
-        c.drawString(50, y, f"Total costs: ${self.business_data.costs:,.2f}")
-        y -= 18
-        c.drawString(50, y, f"Net profit: ${self.business_data.calculate_profit():,.2f}")
-        y -= 18
-        c.drawString(50, y, f"Margin: {self.business_data.calculate_margin():.2f}%")
-        y -= 18
-        c.drawString(50, y, f"Health status: {self.business_data.get_health_status()}")
-        y -= 30
-
-        c.setFont("Helvetica-Bold", 12)
-        c.drawString(50, y, "Expense breakdown")
-        y -= 18
-
-        c.setFont("Helvetica", 11)
-        total = float(self.business_data.costs) if self.business_data.costs else 0.0
-        for category, amount in self.expense_categories.items():
-            amount = float(amount)
-            if amount <= 0:
-                continue
-            pct = (amount / total) * 100 if total > 0 else 0.0
-            c.drawString(60, y, f"- {category}: ${amount:,.2f} ({pct:.1f}%)")
-            y -= 16
-            if y < 80:
-                c.showPage()
-                y = height - 60
-                c.setFont("Helvetica", 11)
-
-        c.save()
-        messagebox.showinfo("Export completed", "PDF report generated successfully.")
+        sidebar_title.pack(pady=20)
+        
+        nav_items = [
+            ("🏠 Dashboard", True),
+            ("💰 Finance", False),
+            ("📊 Analytics", False),
+            ("⚙️ Settings", False),
+            ("📤 Export", False)
+        ]
+        
+        for item_text, is_active in nav_items:
+            bg_color = "#4a4a5a" if is_active else "#2b2b3b"
+            fg_color = "#4a9eff" if is_active else "#ffffff"
+            
+            nav_item = tk.Label(
+                self.barra_menu_literal,
+                text=item_text,
+                font=("Helvetica", 12),
+                bg=bg_color,
+                fg=fg_color,
+                anchor="w",
+                padx=20,
+                pady=10
+            )
+            nav_item.pack(fill="x", padx=10, pady=2)
 
     def create_input_form(self):
         """Create form for business data input."""
@@ -258,7 +232,7 @@ class interfaz(tk.Frame):
         # Botón de cálculo
         calculate_button = tk.Button(
             form_frame,
-            text="Calculate Business Health",
+            text="📊 Calculate Business Health",
             font=("Helvetica", 12, "bold"),
             bg="#4a9eff",
             fg="#ffffff",
@@ -283,7 +257,7 @@ class interfaz(tk.Frame):
                 total_expenses += amount
                 self.expense_categories[category] = amount
             
-            # Crear instancia de SentinelBusiness - AQUÍ ESTÁ LA CONEXIÓN
+            # Crear instancia de SentinelBusiness
             self.business_data = SentinelBusiness(name, revenue, total_expenses)
             
             # Actualizar dashboard
@@ -374,7 +348,7 @@ class interfaz(tk.Frame):
         
         tk.Label(
             health_frame,
-            text="HEALTH STATUS:",
+            text="🟢 HEALTH STATUS:",
             font=("Helvetica", 12, "bold"),
             bg="#2b2b3b",
             fg=status_color
@@ -393,10 +367,10 @@ class interfaz(tk.Frame):
         metrics_frame.pack(fill="x", padx=20, pady=10)
         
         metrics = [
-            ("PROFIT MARGIN:", f"{self.business_data.calculate_margin():.1f}%"),
-            ("MONTHLY REVENUE:", f"${self.business_data.revenue:,.2f}"),
-            ("TOTAL COSTS:", f"${self.business_data.costs:,.2f}"),
-            ("NET PROFIT:", f"${self.business_data.calculate_profit():,.2f}")
+            ("💰 PROFIT MARGIN:", f"{self.business_data.calculate_margin():.1f}%"),
+            ("📈 MONTHLY REVENUE:", f"${self.business_data.revenue:,.2f}"),
+            ("💸 TOTAL COSTS:", f"${self.business_data.costs:,.2f}"),
+            ("🎯 NET PROFIT:", f"${self.business_data.calculate_profit():,.2f}")
         ]
         
         for i, (label, value) in enumerate(metrics):
@@ -466,7 +440,7 @@ class interfaz(tk.Frame):
                 
                 tk.Label(
                     main_row,
-                    text=f"{category}:",
+                    text=f"📢 {category}:",
                     font=("Helvetica", 10),
                     bg="#2b2b3b",
                     fg="#ffffff",
@@ -518,10 +492,11 @@ class interfaz(tk.Frame):
         # Este método se mantiene para compatibilidad, pero será reemplazado
         # por create_updated_expense_breakdown cuando se calculen los datos
         pass
-
+ 
 if __name__ == "__main__":
     ROOT = tk.Tk()
     ROOT.geometry("1000x1000")
     ROOT.configure(bg="#1e1e2e")
     APP = interfaz(parent=ROOT)
     APP.mainloop()
+    ROOT.destroy()

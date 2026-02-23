@@ -12,7 +12,14 @@ class SentinelBusiness:
         if self.revenue <= 0:
             return 0
         # ecuation
-        return (self.calculate_profit() / self.revenue) * 100
+        margin = (self.calculate_profit() / self.revenue) * 100
+
+        # avoid floating point noise close to 0 (e.g., 1e-14)
+        eps = 1e-9
+        if -eps < margin < eps:
+            return 0.0
+
+        return margin
 
     def get_health_status(self):
         margin = self.calculate_margin()
