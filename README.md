@@ -39,7 +39,7 @@ Status: **Phase 1 (Foundations)**
 ###  In Progress (Phase 2)
 ![Coverage](https://img.shields.io/badge/coverage-19%25-orange?style=for-the-badge)
 
-- [ ] **OOP Refactoring:** Transition from functional logic to a fully modular Class-based architecture.
+- [ ] **Domain-Driven Design (DDD):** Transition from functional logic to a fully modular Class-based architecture.
 - [ ] **Visual Identity:** Adding professional badges and project banners to the documentation.
 
 ###  Future Updates (Phase 3 & 4)
